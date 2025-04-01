@@ -44,6 +44,17 @@ body {
     grid-area: sidebar; /* Assign to sidebar area */
 }
 
+.sidebar .listcontainer {
+    list-style-type: none;
+    padding: 40px 0px 40px 0px;
+    margin: 0;
+}
+.sidebar .listitems {
+    padding: 10px 0px 10px 0px;
+
+    margin: 0;
+}
+
 /* Menu styles */
 .menu {
     padding: 20px;
