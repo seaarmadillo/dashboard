@@ -1,44 +1,72 @@
+/* General styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
     height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr; /* Header takes auto height, content takes remaining space */
+    grid-template-columns: 1fr; /* Single column for the body */
+    grid-template-areas:
+        "header"
+        "content";
 }
 
 /* Header styles */
 .header {
-    background-color: #181818;
-    color: white;
+    background-color: whitesmoke;
+    color: #181818;
     padding: 10px 20px;
     text-align: center;
     font-size: 24px;
     font-weight: bold;
-    flex-shrink: 0; /* Prevent shrinking */
+    grid-area: header; /* Assign to header area */
 }
 
 /* Dashboard container */
 .dashboard-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 250px 1fr; /* Sidebar takes 250px, menu takes remaining space */
+    grid-template-rows: 1fr; /* Single row for the content */
+    grid-template-areas: 
+        "sidebar menu"; /* Define grid areas */
     flex: 1; /* Take up remaining space */
     overflow: hidden; /* Prevent content overflow */
+    grid-area: content; /* Assign to content area */
 }
 
 /* Sidebar styles */
 .sidebar {
-    background-color: #303030;
+    background-color: #34a4eb;
     color: white;
-    width: 250px;
     padding: 20px;
-    flex-shrink: 0; /* Prevent shrinking */
     overflow-y: auto; /* Scroll if content overflows */
+    grid-area: sidebar; /* Assign to sidebar area */
 }
 
 /* Menu styles */
 .menu {
-    flex: 1; /* Take up remaining space */
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #e8eaeb;
     overflow-y: auto; /* Scroll if content overflows */
+    grid-area: menu; /* Assign to menu area */
+}
+
+/* Grid container for main content */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-template-rows: repeat(3, auto); /* Three rows */
+    gap: 20px; /* Space between grid items */
+    margin-top: 20px; /* Add spacing above the grid */
+}
+
+/* Grid items */
+.grid-item {
+    background-color: whitesmoke; /* Light gray background */
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc; /* Optional: Add a border */
+    border-radius: 8px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
 }
